@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="/styles/main.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body> 
+    
+<!-- -->
+
+<div class="b-example-divider"></div>
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">
+        Enter your city name
+      </h1>
+      <p class="col-lg-10 fs-4">
+        Get real-time weather updates at a glance. Check temperature, conditions, and forecasts for any city with a fast, simple, and beautifully designed interface — so you’re always prepared for the day ahead
+      </p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+          <% if(locals.data){ %>
+    <h1><%= data %></h1>
+    <h2><%= data1 %></h2> 
+    <h2><%= data2 %></h2>
+    <% }else{ %>
+        <h2>Enter city</h2>
+        <% } %>
+      <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" action="/search" method="post">
+       <div class="form-floating mb-3">
+  <input
+    type="text"
+    class="form-control"
+    id="floatingInput"
+    name="city"
+    placeholder="City"
+    required
+  />
+  <label for="floatingInput">City name</label>
+</div>
+      
+     
+        <button class="w-100 btn btn-lg btn-primary" type="submit">
+          Search
+        </button>
+        <hr class="my-4" />
+        <small class="text-body-secondary"
+          >know your city wheather</small
+        >
+      </form>
+    </div>
+  </div> 
+</div>
+
+ 
+
+  <footer
+    class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top footer"
+  >
+    <div class="col-md-4 d-flex align-items-center">
+       
+      <span class="mb-3 mb-md-0 text-body-secondary ">© 2026 Mitesh Chandel</span>
+    </div>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+     
+      
+        <a class="text-body-secondary" href="https://github.com/Mitesh-Chandel" aria-label="Github"
+          ><svg class="bi github" width="24" height="24">
+            <use xlink:href="/images/github.svg"></use></svg>
+        </a>
+     
+    </ul>
+  </footer>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
