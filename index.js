@@ -1,22 +1,22 @@
 //   https://api.open-meteo.com/v1/forecast?latitude=23.03&longitude=72.58&current=temperature_2m
 import express from "express";
-import axios from "axios";
+import axios from "axios"; 
 
 const app = express();
 const port = 3000;
 const API_URL = "https://geocoding-api.open-meteo.com/v1/search?name=";
 const remapi = "&count=1&language=en";
-
+ 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
  
 app.get("/", (req, res) => {  
-  res.render("index.ejs");
-});   
+  res.render("index.ejs"); 
+});    
    
 app.post("/search", async (req, res) => {
   try {
-    const cityname1 = req.body.city;
+    const cityname1 = req.body.city; 
    //  console.log("cityname:" + cityname1); 
     const response = await axios.get(
       API_URL + encodeURIComponent(cityname1) + remapi,
