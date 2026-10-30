@@ -1,98 +1,34 @@
-# Weather App — Node.js + Express + Open-Meteo API
+# Atmos Weather
 
-## 📌 Project Overview
+A responsive weather dashboard built with Node.js, Express, EJS, and the Open-Meteo APIs. Search for a city or use your browser's current location to see live conditions, weather highlights, hourly forecasts, and a five-day outlook.
 
-This is a simple weather web application built using Node.js, Express, and EJS.
-Users can enter a city name, and the app fetches real-time weather data using the Open-Meteo API.
+## Features
 
-The application performs:
-• City name → geographic coordinates (geocoding)
-• Coordinates → live weather data
-• Displays temperature and wind speed
+- City search with Enter-key support and clear invalid-city/API error states
+- Optional current-location weather using browser geolocation
+- Live temperature, apparent temperature, humidity, wind and gusts, pressure, cloud cover, and precipitation
+- Daily high/low temperatures, sunrise/sunset, UV index, and precipitation probability
+- Hourly temperature and precipitation probability plus a five-day forecast
+- Responsive glass-inspired layout, weather-based hero colors, and persistent light/dark theme
+- Open-Meteo values and units are used directly; unsupported fields such as visibility are not fabricated or displayed
 
-The goal of this project is to practice API integration, server-side rendering, and Express routing.
+## Requirements
 
----
+- Node.js 18 or later
+- npm
 
-## ⚙ Technologies Used
+## Run locally
 
-• Node.js
-• Express.js
-• Axios
-• EJS templating
-• Bootstrap (UI styling)
-• Open-Meteo API
+```sh
+npm install
+npm start
+```
 
----
+Open [http://localhost:3000](http://localhost:3000). Set the `PORT` environment variable to change the server port. Browser geolocation requires a secure context (HTTPS) or localhost and user permission.
 
-## 📁 Project Structure
+## Data sources
 
-weather-app/
-│
-├── public/
-│   ├── styles/
-│   │   └── main.css
-│   └── images/
-│
-├── views/
-│   └── index.ejs
-│
-├── index.js
-├── package.json
-└── readme.txt
+- [Open-Meteo Geocoding API](https://open-meteo.com/en/docs/geocoding-api) resolves city names into coordinates and place details.
+- [Open-Meteo Forecast API](https://open-meteo.com/en/docs) provides current, hourly, and daily weather data for those coordinates.
 
----
-
-## 🚀 Installation & Setup
-
-1. Install Node.js if not already installed.
-
-2. Open terminal inside the project folder.
-
-3. Install dependencies:
-   npm install
-
-4. Start the server:
-   node index.js
-
-5. Open browser:
-   http://localhost:3000
-
----
-
-## 🧠 How It Works
-
-1. User enters a city name.
-2. Server sends request to Open-Meteo Geocoding API.
-3. API returns latitude & longitude.
-4. Server fetches weather using coordinates.
-5. Results are rendered on the webpage.
-
----
-
-## ✨ Features
-
-✔ City search
-✔ Live temperature display
-✔ Wind speed display
-✔ Clean responsive UI
-✔ Error handling for invalid cities
-
----
-
-## 🔮 Future Improvements
-
-• Weather icons
-• Forecast display
-• Location auto-detect
-• Dark/light theme
-• Animated UI
-
----
-
-## 👨‍💻 Author
-
-Mitesh Chandel
-Weather App Project — Learning Backend Development
-
----
+The app does not require an API key. Units are supplied by Open-Meteo's response and the forecast timezone is automatically selected for the requested coordinates.
